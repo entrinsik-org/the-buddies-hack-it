@@ -1,0 +1,25 @@
+{
+  "name": "the-buddies-hack-it",
+  "version": "1.0.0",
+  "description": "hackathon",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/entrinsik-org/the-buddies-hack-it.git"
+  },
+  "author": "robin lamb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/entrinsik-org/the-buddies-hack-it/issues"
+  },
+  "homepage": "https://github.com/entrinsik-org/the-buddies-hack-it#readme",
+  "devDependencies": {
+    "@entrinsik/informer": "^5.x.x"
+  }
+}

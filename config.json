@@ -1,0 +1,23 @@
+{
+  "name": "Informer5",
+  "tokenSecret": "DefaultTokenSecretThisShouldChange",
+  "http": 4000,
+  "db": {
+    "database": "informer5",
+    "host": "localhost",
+    "user": "postgres",
+    "password": "informer5",
+    "port": 5432
+  },
+  "elastic": {
+    "host": "localhost",
+    "port": 9200
+  },
+  "redis": {
+    "host": "localhost",
+    "port": 6379
+  },
+  "loadBalancer": {},
+  "host": "localhost",
+  "NODE_ENV": "production"
+}
