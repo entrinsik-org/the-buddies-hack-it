@@ -1,4 +1,6 @@
 'use strict';
+const driverfactory = require('./lib/driverfactory');
+
 exports.register = function(server,opts,next){
     //need to server on start handler
     //get all the functions
@@ -8,8 +10,12 @@ exports.register = function(server,opts,next){
     server.on ('start',async () => {
        const FunctionModel = server.app.db.model('Function');
        const flowFunctions = await FunctionModel.findAll({where:{namespace:'informer-flow'}});
-       const flowDrivers = flowFunctions.map(f=>eval(`(${f.script})`));
+       const flowDrivers = flowFunctions.map(f=>driverfactory(f));
        server.drivers('flow', flowDrivers);
+       //add hook to function save
+       FunctionModel.hook('afterSave',function(funct,opts){
+        server.drivers('flow', driverfactory(funct));
+       })
     });
     next();
 };
